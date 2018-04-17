@@ -20,8 +20,10 @@ RUN wget -P /rally/ https://raw.githubusercontent.com/openstack/rally/0.11.2/ins
 # Cleanup pip
 RUN rm -rf /root/.cache/
 
+#Recreate rally database
 RUN rally db recreate
 
+#Changing workdir
 WORKDIR /home/rally
 
 # Docker volumes have specific behavior that allows this construction to work.
