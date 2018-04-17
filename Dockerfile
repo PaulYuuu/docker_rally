@@ -1,4 +1,5 @@
 FROM ubuntu:16.04
+MAINTAINER AnanasYuu <yuyihuang0702@163.com>
 
 RUN sed -i s/^deb-src.*// /etc/apt/sources.list && \
     apt-get update && apt-get install --yes bash-completion apt-utils python python-pip python-dev vim wget git-core && \
