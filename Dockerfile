@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER AnanasYuu <yuyihuang0702@163.com>
 
+# Install dependencies and Create folders
 RUN apt-get update && apt-get install --yes bash-completion apt-utils iputils-ping vim wget git-core \
     python python-pip python-dev && \
     pip install --upgrade pip && \
@@ -11,6 +12,7 @@ RUN apt-get update && apt-get install --yes bash-completion apt-utils iputils-pi
              /home/rally/html_result/rally \
              /home/rally/html_result/tempest
 
+# Install Rally
 RUN wget -P /rally/ https://raw.githubusercontent.com/openstack/rally/0.11.2/install_rally.sh && \
     sed -i 's/^RALLY_GIT_BRANCH=.*/RALLY_GIT_BRANCH="0.11.2"/' /rally/install_rally.sh && \
     sed -i 's/^RALLY_DATABASE_DIR=.*/RALLY_DATABASE_DIR=\/home\/rally\/data/' /rally/install_rally.sh && \
@@ -20,7 +22,7 @@ RUN wget -P /rally/ https://raw.githubusercontent.com/openstack/rally/0.11.2/ins
     echo '[ ! -z "$TERM" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc && \
     bash /rally/install_rally.sh
 
-# Cleanup packages
+# Cleanup packages.
 RUN apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /root/.cache/
