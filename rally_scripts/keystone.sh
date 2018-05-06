@@ -12,7 +12,7 @@ keystone_case=`find ../$rally_task_dir/keystone -name "*.yaml"`
 
 for case in $keystone_case
 do
-    name=`echo $case | awk -F "/" '{print $NF}' | tr -d ".yaml"`
+    name=`echo $case | awk -F "/" '{print $NF}' | cut -d "." -f 1`
     rally --log-file ../testcase_result/keystone/$name.log task start --task $case
     #Create rally report
     uuid=`rally task status | awk '{print $2}' | tr -d :`
