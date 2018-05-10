@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install --yes bash-completion apt-utils iputils-pi
              /home/rally/html_result/tempest
 
 # Install and configuration Rally
-RUN wget -P /rally/ https://raw.githubusercontent.com/openstack/rally/0.11.2/install_rally.sh && \
-    sed -i 's/^RALLY_GIT_BRANCH=.*/RALLY_GIT_BRANCH="0.11.2"/' /rally/install_rally.sh && \
+RUN wget -P /rally/ https://raw.githubusercontent.com/openstack/rally/0.12.0/install_rally.sh && \
+    sed -i 's/^RALLY_GIT_BRANCH=.*/RALLY_GIT_BRANCH="0.12.0"/' /rally/install_rally.sh && \
     sed -i 's/^RALLY_DATABASE_DIR=.*/RALLY_DATABASE_DIR=\/home\/rally\/data/' /rally/install_rally.sh && \
     sed -i 's/SOURCEDIR="\$ORIG_WD".*/SOURCEDIR="\$ORIG_WD"\/home\/rally\/source/' /rally/install_rally.sh && \
     echo 'cp $SOURCEDIR/etc/motd /etc/motd' >> /rally/install_rally.sh && \
