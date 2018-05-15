@@ -8,9 +8,9 @@ MAINTAINER AnanasYuu <yuyihuang0702@163.com>
 RUN apt-get update && apt-get install --yes \
     bash-completion apt-utils iputils-ping vim wget git-core tzdata \
     python python-pip python-dev && \
+    pip install --upgrade pip && \
 	echo "Asia/Shanghai" > /etc/timezone && \
     echo "export TZ='Asia/Shanghai'" >> /etc/bash.bashrc && \
-    pip install --upgrade pip && \
     sed -i "32,38s/^#//g" /etc/bash.bashrc && \
     mkdir -p /home/rally/source
 
