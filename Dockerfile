@@ -24,11 +24,11 @@ RUN wget -P /home/rally/ https://raw.githubusercontent.com/openstack/rally/0.12.
     echo 'source /usr/local/etc/bash_completion.d/rally.bash_completion' >> /etc/bash.bashrc && \
     bash /home/rally/install_rally.sh && \
     sed -i "s/ajax.googleapis.com\/ajax\/libs\/angularjs/cdnjs.cloudflare.com\/ajax\/libs\/angular.js/" \
-    /usr/local/lib/python2.7/dist-packages/rally/ui/templates/task/report.html && \
+           /usr/local/lib/python2.7/dist-packages/rally/ui/templates/task/report.html && \
     sed -i "s/ajax.googleapis.com\/ajax\/libs\/angularjs/cdnjs.cloudflare.com\/ajax\/libs\/angular.js/" \
-    /usr/local/lib/python2.7/dist-packages/rally/ui/templates/task/trends.html && \
+           /usr/local/lib/python2.7/dist-packages/rally/ui/templates/task/trends.html && \
     sed -i "s/ajax.googleapis.com\/ajax\/libs\/angularjs/cdnjs.cloudflare.com\/ajax\/libs\/angular.js/" \
-    /usr/local/lib/python2.7/dist-packages/rally/ui/templates/verification/report.html
+           /usr/local/lib/python2.7/dist-packages/rally/ui/templates/verification/report.html
 
 # Copy script
 COPY . /home/rally/
