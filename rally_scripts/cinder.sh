@@ -1,7 +1,6 @@
 #!/bin/bash
 
 mkdir -p cinder/{log,html}
-
 rally_task_dir=../../source/samples/tasks/scenarios
 cinder_case=`find $rally_task_dir/cinder -name "*.yaml"`
 

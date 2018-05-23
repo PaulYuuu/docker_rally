@@ -15,8 +15,7 @@ RUN apt-get update && apt-get install --yes \
     mkdir -p /home/rally/source
 
 # Install and configuration Rally
-RUN wget -P /home/rally/ https://raw.githubusercontent.com/openstack/rally/0.12.0/install_rally.sh && \
-    sed -i 's/^RALLY_GIT_BRANCH=.*/RALLY_GIT_BRANCH="0.12.0"/' /home/rally/install_rally.sh && \
+RUN wget -P /home/rally/ https://raw.githubusercontent.com/openstack/rally/master/install_rally.sh && \
     sed -i 's/^RALLY_DATABASE_DIR=.*/RALLY_DATABASE_DIR=\/home\/rally\/data/' /home/rally/install_rally.sh && \
     sed -i 's/SOURCEDIR="\$ORIG_WD".*/SOURCEDIR="\$ORIG_WD"\/home\/rally\/source/' /home/rally/install_rally.sh && \
     echo 'cp $SOURCEDIR/etc/motd /etc/motd' >> /home/rally/install_rally.sh && \

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 mkdir -p glance/{log,html}
-
 rally_task_dir=../../source/samples/tasks/scenarios
 glance_case=`find $rally_task_dir/glance -name "*.yaml"`
 
