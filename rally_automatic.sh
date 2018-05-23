@@ -1,8 +1,6 @@
 #!/bin/bash
 
-script_dir=$(cd `dirname $0`; pwd)
-cd $script_dir
-
+cd `dirname $0`
 time=`date +%H:%M:%S`
 mkdir -p testcase_result/$time
 

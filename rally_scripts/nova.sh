@@ -1,7 +1,6 @@
 #!/bin/bash
 
 mkdir -p nova/{log,html}
-
 rally_task_dir=../../source/samples/tasks/scenarios
 nova_case=`find $rally_task_dir/nova -name "*.yaml"`
 

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 mkdir -p keystone/{log,html}
-
 rally_task_dir=../../source/samples/tasks/scenarios
 keystone_case=`find $rally_task_dir/keystone -name "*.yaml"`
 

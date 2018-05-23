@@ -1,7 +1,6 @@
 #!/bin/bash
 
 mkdir -p neutron/{log,html}
-
 rally_task_dir=../../source/samples/tasks/scenarios
 neutron_case=`find $rally_task_dir/neutron -name "*.yaml"`
 
